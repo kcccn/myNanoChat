@@ -1,11 +1,4 @@
-﻿---
-title: "myNanoChat 开发笔记" 
-date:  2026-01-29
-draft: false
-math:  true
----
-
-> 主要参考：[Transformer Explainer: LLM Transformer Model Visually Explained](https://poloclub.github.io/transformer-explainer/)
+﻿> 主要参考：[Transformer Explainer: LLM Transformer Model Visually Explained](https://poloclub.github.io/transformer-explainer/)
 >
 > 感谢作者 *Aeree Cho, Grace C. Kim, Alexander Karpekov, Alec Helbling, Zijie J. Wang, Seongmin Lee, Benjamin Hoover, Duen Horng Chau* 在模型可视化方面的卓越工作，让我得以深入浅出地了解主流 LLM 的运作框架。
 >
@@ -30,6 +23,7 @@ $$
 其中 "$+$" 表示词语的连接操作，$n$ 是句子 $S$ 中词语的数量，$w_i$ 是句子 $S$ 中的第 $i$ 个词语，且该词语属于词表 $V$。然后，每个词语 $w_i$ 被映射为一个唯一的整数 $t_i$，作为其编号。$w_i$ 便被称作 "token"，$t_i$ 则被称作 "token ID"。
 
 举例：
+
 $$
 \text{句子 = “一分耕耘，一分收获。”}\\
 \text{token = “一分” + “耕耘” + “，” + “一分” + “收获” + “。”}\\
@@ -64,5 +58,4 @@ $$
 ## 2.3 算法实现
 
 具体实现上，主要采取可删堆来高效维护当前相邻 token 对的信息。这里不再赘述，可以阅读[src/tokenizer.py](src/tokenizer.py) 了解具体细节。
-
 
